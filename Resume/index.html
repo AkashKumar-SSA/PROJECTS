@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #main_container{
+            display:flex;
+            flex-direction: column;
+            width:900px;
+            background-color: rgb(240, 240, 239);
+            gap:20px;
+            margin-left: 200px;
+            padding: 50px;
+        }
+        #header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        #left_header{
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+        }
+        #left_header #name{
+            font-size: 30px;
+            font-weight: 500;
+            text-decoration: underline;
+            background-color: rgb(205, 205, 202);
+            text-align: center;
+        }
+        #left_header #description{
+            text-indent: 20px;
+            font-style: italic;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        #left_header #languages{
+            font-size: 20px;
+            font-weight: 400;
+            border: 1px solid black;
+            width: 100%;
+            padding: 10px;
+            background-color:rgb(205, 205, 202) ;
+
+        }
+        #right_header{
+            display: flex;
+            flex-direction: column;
+        }
+        .content_header{
+            font-size:20px;
+            font-weight: 500;
+            text-decoration: underline;
+            margin: 0px;
+            font-style:italic;
+            padding:10px;
+        }
+        #skills #programming_languages{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            border: 2px solid black;
+            flex-wrap: wrap;
+            height: 30px;
+            gap:2px;
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+        }
+        #Experience_description{
+            border: 1px solid black;
+            width: 100%;
+            padding: 10px;
+            background-color:rgb(205, 205, 202) ;
+        }
+        table{
+            border: 2px solid black;
+            width: 100%;
+            
+        }
+        thead th{
+            text-align: center;
+            background-color: rgb(133, 132, 134);
+        } 
+        tbody td{
+            text-align: left;
+            background-color: rgb(205, 205, 202);
+        }
+       
+        #programming_languages div{
+            background-color:  rgb(205, 205, 202);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="main_container">
+        <div id="header">
+            <div id="left_header">
+                <span id="name"><h3>AKASH KUMAR</h3></span>
+                <div id="description">Computer science engineer with holistic knowledge of computer science and technologies. Willingness to learn , follow instructions and work cooperatively within team environments.</div>
+                <br>
+                <div id="languages">Languages :   Hindi , English , Tamil </div>
+            </div>
+            <div id="right_header">
+                <div id="Email"> Email: akashkr6060@gmail.com</div>
+                <div id="Phone"> Phone : 7004351261</div>
+                <div id="linkedin"></div>
+                <div id="Github"></div>
+                <div id="leetcode"></div>
+            </div>
+        </div>
+        <div id="Experience">
+            <div id="experience_header">
+                <div id="Experince" class="content_header">Experience</div>
+                <div id="Experience_description">4 Years of Extensive work on programming skills</div>
+            </div>
+        </div>
+        <div id="Academic_detail">
+            <span id="academin_header" class = "content_header">ACADEMIC DETAILS:</span>
+            <table>
+                <thead>                    
+                    <tr>
+                        <th>COURSE</th>
+                        <th>INSTITUTION</th>
+                        <th>GRADE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>B.tech Computer Science and Engineering</td>
+                        <td>Shobhit institute of engineering and technology</td>
+                        <td>8.04<br>(third semester)</td>
+                    </tr>
+                    <tr>
+                        <td>Intermidiate and Matriculation</td>
+                        <td>Sainik school Amaravathinagar,Tamilnadu</td>
+                        <td>80% <i> (Intermidiate)</i><br>85% <i> (Matriculation)  </i></td>
+                    </tr>
+                </tbody>                    
+            </table>
+        </div>
+        <div id="skills">
+            <span id="skill_header" class="content_header">PROGRMMING LANGUAGES</span>
+            <div id= "programming_languages">
+                <div id="python">PYTHON</div>
+                <div id="C">C</div>
+                <div id="java">JAVA</div>
+                <div id="mysql">MYSQL</div>
+                <div id="xml">XML</div>
+                <div id="html">HTML</div>
+                <div id="css">CSS</div>
+                <div id="javascript">JAVASCRIPT</div>
+            </div>
+        </div>
+        <div id="positions_of_responsibility">
+            <span id="positions_of_responsibility_header" class="content_header">POSITIONS OF RESPONSIBILITY</span>
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>POSITION</th>
+                        <th>YEAR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>School Band Caption</td>
+                        <td>2019-20</td>
+                    </tr>
+                    <tr>
+                        <td>Class caption</td>
+                        <td>2019</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="Projects">
+            <span id="projects" class="content_header">PROJECTS</span>
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Sr.</th>
+                        <th>PROJECTS</th>
+                        <th>LANGUAGES USED</th>
+                        <th>PROJECT DESCRIPTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>Gas Inventory Managent System</td>
+                        <td>Python,Mysql</td>
+                        <td>-> Deal with sell and purchase of petroleum gases</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Sticky Notes</td>
+                        <td>Html,Css,Javascript</td>
+                        <td>-> Different shapes and design for notes
+                            <br>-> Integrated with AI to ask doubt and make notes
+                            <br>-> Various test editing tools
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>E-market <br>(Android App)</td>
+                        <td>JAVA , XML </td>
+                        <td>-> Access all products available in market
+                            <br>-> Compare the prices in eevery shops
+                            <br>-> Locate the shop in the google location</td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>Tic Tac Toe Game <br> (Android Game)</td>
+                        <td>JAVA , XML </td>
+                        <td>-> A Game for two players  
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="certificates_and_achivements">
+            <span class="content_header"> Certificates </span>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sr.</th>>
+                        <th>CERTIFICATES</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>Overview of geoprocessing using python(course by IIRS-ISRO)</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>NCC A ,B & C Certificate</td>                        
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Runner up of SU code Blaze Hackathon</td>                        
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>Participatead in intenal smart India Hackathon Competition</td>                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="extra_curricular_activities">
+            <span id="extra-curricular" class="content_header">Extra-Curricular Activity</span>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sr.</th>
+                        <th>ACTIVITY</th>
+                        <th>POSITION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>Inter university Quiz Competition </td>
+                        <td>Winner</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Inter university waste to best competition</td>
+                        <td>Winner</td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Debate competition</td>
+                        <td>Winner</td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>Indian Public School Band Competition</td>
+                        <td>Runner up</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .main{
+            background-color: rgba(132, 211, 118, 1);
+            height: 100vh;
+            width: 100%;
+        }
+        .navbar #class{
+            background: #ddd;
+            color: black;
+        }
+        .navbar :not(#class){
+            background-color: #333;
+            color: #f2f2f2;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="left_right_scroll" style="width: fit-content;height: fit-content;display: flex;align-items: center;justify-content: center;position: fixed;left:10px;top:60px;z-index: 500;background-color: transparent;">
+        <img src="left_right_logo.jpg" id="left_right_logo_image" style="width: 50px; height: 50px;">
+    </div>
+
+    <div class="navbar">
+        <a href="index.html">Create Note</a>
+        <a href="memory.html">Memories</a>
+        <a href="today.html">Today</a>
+        <a href="office.html">Office</a>
+        <a href="class.html" id="class">Class</a>
+        <a href="AI_Question&Answer.html">Q & A</a>
+    </div>
+
+    <div id="main_container">
+        <!-- toolbar -->
+        <div id="toolbar">
+            <button id="bold">B</button>
+            <button id="italic">I</button>
+            <button id="underline">U</button>
+            <button id="strikethrough">Strike</button>
+            <button id="text_color">Text Color</button>
+            <button id="background_colour">Background color</button>
+            <button id="size">Text size</button>
+            
+        </div>
+        <!-- <div id="sticky-note">
+            <p contenteditable="true"></p>
+        </div> -->
+
+        <!-- Left Side Container Codes -->
+        <div id="left_container">
+
+            <div class="left_main_elements_container">
+                <div id="ai_container">
+                    <div id="ai_output_container_div">
+                        <span id="ai_output_question">QUESTION FROM USER: </span>
+                        <span id="ai_output_answer"><b><i> ............Connect to a network to get
+                                    answer.............</i></b> </span>
+                    </div>
+                    <div id="ai_input_container_div">
+                        <input type="text" name="" id="ai_input" placeholder="Enter question here">
+                        <button id="ai_answer_generate_button"><img id="ai_answer_generate_button_image"
+                                src="send_message_logo.png"></button>
+                    </div>
+                </div>
+
+                <textarea name="" id="text_area" cols="40" rows="10" placeholder="Enter text here//" contenteditable="true"></textarea>
+
+                <input type="text" name="" id="notes_heading" placeholder="Give heading to your notes//">
+
+                <div id="color_choose_option" class="color_pick">
+                    <div id="background_choose">
+                        <input type="color" name="" id="color">
+                        <label for="color" class="color_label"> Background</label>
+                    </div>
+
+                    <div id="text_color_choose">
+                        <input type="color" name="" id="color" >
+                        <label for="font_color" class="color_label">Text</label>
+                    </div>
+
+                    <div id="text_size">
+                        <input type="range" name="" id="size" min="10" max="60">
+                        <label for="size" class="color_label">Text Size</label>
+                    </div>
+
+                    <div id="ai"> <!-- AI button -->
+                        <p id="ai_highlight">AI</p>
+                    </div>
+                </div>
+
+            </div>
+            <div id="button">
+                <button id="add_note">+</button>
+            </div>
+        </div>
+
+
+        <!-- Right Side Container Codes -->
+        <div id="right_container">
+            <h1>Your Notes</h1>
+            <p id="empty_line">You have not added a note yet</p>
+            <div id="notes_container">
+                <!-- All notes are inserted here -->
+            </div>
+        </div>
+    </div>
+    <script src = "note_add.js"></script>
+    <script src = "script.js"></script>
+    <script type="module" src="module.js"></script>
+
+</body>
+
+</html>

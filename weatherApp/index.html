@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <div id="result"></div>
+    <button id="get_location">Get Location</button>
+
+    <script>
+        const API_KEY =`a2b921aa65a6cfe5e3e18b48fec809f1`;
+        const result = document.querySelector("#result");
+
+        document.querySelector("#get_location").addEventListener("click", () => {
+            findMyCoordinates();
+        });
+
+        function findMyCoordinates() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    // result.innerHTML = "Latitude: " + latitude + "<br>" + "Longitude: " + longitude;
+                    // console.log(result.innerHTML);
+                    getWeather(latitude, longitude);
+                    
+                }, (error) => {
+                    alert(error.message);
+                });
+            } else {
+                result.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function getWeather(latitude, longitude) {
+            const weather_api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`;
+
+            fetch(weather_api)
+                .then(response => response.json())
+                .then(data => {
+                    console.log("weather data = ", data);
+
+                    let long = data.coord.lon;
+                    let lat = data.coord.lat;
+                    let city = data.name;
+                    let country = data.sys.country;
+                    let description = data.weather[0].description;
+
+                    let icon = data.weather[0].icon;
+                    let icon_url = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+                    let weather_icon = document.createElement("img");
+                    weather_icon.src = icon_url;
+                    result.appendChild(weather_icon);                 
+                    
+                    let weather = data.weather[0].main;
+                    let temp = data.main.temp -273;
+                    let humidity = data.main.humidity;
+                    let wind = data.wind.speed;
+                    let clouds = data.clouds.all;
+                    let visibility = data.visibility;
+                    let pressure = data.main.pressure;
+                    let sunrise = data.sys.sunrise;
+                    let sunset = data.sys.sunset;
+
+                    result.innerHTML = '<div class="weather_info">' +
+                        '<h2>Weather</h2>' +
+                        '<p>Longitude:' + long + '</p>' +
+                        '<p>Latitude: ' + lat + '</p>' +
+                        '<p>City: ' + city + '</p>' +
+                        '<p>Country: ' + country + '</p>' +
+                        '<p>Description: ' + description + '</p>' +
+
+                        '<p>Weather: ' + weather + '</p>' +
+                        '<p>Temperature: ' + temp + '</p>' +
+                        '<p>Humidity: ' + humidity + '</p>' +
+                        '<p>Wind: ' + wind + '</p>' +
+                        '<p>Clouds: ' + clouds + '</p>' +
+                        '<p>Visibility: ' + visibility + '</p>' +
+                        '<p>Pressure: ' + pressure + '</p>' +
+                        '<p>Sunrise: ' + new Date(sunrise * 1000).toLocaleTimeString() + '</p>' +
+                        '<p>Sunset: ' + new Date(sunset * 1000).toLocaleTimeString() + '</p>' +
+                        '</div>';
+                })
+                .catch(error => {
+                    console.log("Error fetching weather data:", error);
+                });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="thick-arrow-right"></div>
+    <div id="thick-arrow-left"></div>
+    <div id="shape_container">
+        <div id="square"></div>
+        <div id="rectangle"></div>
+        <div id="circle"></div>
+        <div id="parallelogram"></div>
+        <div id="triangle-up"></div>
+        <div id="heart-with-gradient"></div>
+        <div id="triangle-down"></div>
+        <div id="circle"></div>
+        <div id="oval"></div>
+        <div id="trapezoid"></div>
+        <div id="triangle-right"></div>
+        <div id="moon"></div>
+        <div id="pointer"></div>
+        <div id="base"></div>
+        <div id="cone"></div>
+        <div id="flag"></div>
+
+
+        <div id="star-six"></div>
+        <div id="star-five"></div>
+        <div id="hexagon"></div>
+        <div id="octagon"></div>
+        <div id="heart"></div>
+        <div id="diamond-shield"></div>
+        <div id="diamond-narrow"></div>
+        <div id="cut-diamond"></div>
+        <div id="egg"></div>
+        <div id="burst-12"></div>
+        <div id="talkbubble"></div>
+        <div id="tv"></div>
+
+
+    </div>
+
+    <script>
+        let thick_arrow_right = document.querySelector("#thick-arrow-right");
+        let shape_container = document.querySelector("#shape_container");
+        let display_condition = false;
+        thick_arrow_right.addEventListener('click', function () {
+            if (display_condition == false) {
+                shape_container.style = "display: flex;flex-wrap: wrap;gap: 20px 20px;"
+                display_condition = true;
+            } else {
+                shape_container.style = "display: none";
+                display_condition = false;
+            }
+        });
+    </script>
+
+    </script>
+</body>
+
+</html>
