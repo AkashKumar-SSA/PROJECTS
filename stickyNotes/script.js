@@ -9,12 +9,29 @@ let text_size = document.querySelector("#text_size #size");
 let notes_heading = document.querySelector("#notes_heading");
 let ai_input = document.querySelector("#ai_input");
 
-let memory_main = document.querySelector(".memory_main");
+let notes_location_info = document.querySelector("#notes_location_info");
+
+// let memory_main = document.querySelector(".memory_main");
 // Setting th default /initial property to textarea
 background_color.value = "#223344";
 text_color.value = "#a69a9a";
 text_size.value = "10";
 
+//global variables
+let notes_text_content;
+let notes_heading_content;
+let notes_location_content;
+
+function inser_content_toEdit(){
+    // text.innerText = notes.notes_text_content;
+    // notes_heading.innerHTML = notes_heading_content;
+    // notes_location_info.innerHTML = notes_location_content;
+
+    text.innerText = "hello";
+    notes_heading.innerText = "hellow";
+    notes_location_info.innerText = "hellow";
+    console.log("inside insert function");
+}
 
 // Setting the property to the text/notes field
 background_color.addEventListener('change', function () {
@@ -61,13 +78,13 @@ function AddNotes() {
     cross_div.appendChild(heading);
     heading.innerText = notes_heading.value;
 
-
     let cross_btn = document.createElement("button");
     cross_div.appendChild(cross_btn);
 
 
     // Cross button creation
     cross_btn.innerHTML = "<b>X</b>";
+    cross_btn.style = "height:100%;font-size:20px;"
 
 
     //Cross button Events
@@ -93,9 +110,6 @@ function AddNotes() {
     p.innerText = text.value;
     p.style.fontSize = text_size.value + "px";
     p.style.color = text_color.value;
-
-
-
 
     // creating date-time - location div element
     let date_time_location_div = document.createElement("div");
@@ -135,28 +149,49 @@ function AddNotes() {
     div.appendChild(location_popup_div);
 
     // Mouseover / Mouseout event Location logo
-    // let location_logo = document.createElement("img");
-    // location_logo.src = "location_logo.jpg";
-    // location_logo.style = "height:25px;";
-    // date_time_location_div.appendChild(location_logo);
-    
+    let location_logo = document.createElement("img");
+    location_logo.src = "location_logo.jpg";
+    location_logo.style = "height:25px;";
+    date_time_location_div.appendChild(location_logo);
 
+    location_logo.addEventListener("mouseover", function () {
+        location_popup_div.style = "display:block; ";
+        location_popup_div.innerHTML = "<b>Location :</b><br>";
+        location_popup_div.innerText += notes_location_info.value;
 
-    // location_logo.addEventListener("mouseover", function () {
-    //     location_popup_div.style = "display:block;height: 300px;width: 300px;background - color: white;position: absolute;top: 40 %;left: 50 %;transform: translate(-50 %, -50 %); z - index: 1000; border: 2px solid green;flex - direction: column; ";
+    });
+    location_logo.addEventListener("mouseout", function () {
+        location_popup_div.style = "display:none;";
+    });
 
-    // });
-    // location_logo.addEventListener("mouseout", function () {
-    //     location_popup_div.style = "display:none;";
-    // });
+    // Notes edit-option code container
+    let edit_note = document.createElement("img");
+    edit_note.src = "edit_logo.jpg";
+    edit_note.style = "height:25px;";
+    date_time_location_div.appendChild(edit_note);
+
+    //edit_note mouse click events
+    edit_note.addEventListener("click",()=>{
+        text.innerHTML  += p.innerText;
+        notes_heading.innerText = heading.value;
+        console.log("inside the edit text element:-----------");
+        console.log(p);
+        console.log(p.innerText);
+        console.log(text);
+        console.log("from textarea: ",text.innerHTML);
+        inser_content_toEdit();
+        
+    })
 
     // Styling the main div element
     div.style = "display:flex;flex-direction:column;width:400px;height:350px; border-top-right-radius: 60px; border-bottom-left-radius: 60px;position:relative;";
+
     div.style.backgroundColor = background_color.value;
 
     notes.appendChild(div); // adding the div to the notes div container
-    memory_main.appendChild(div);
+    // memory_main.appendChild(div);
 
+    console.log("values are before - reset now:",text.value);
     //reseting the values
     notes_heading.value = "";
     text.value = "";
@@ -165,6 +200,8 @@ function AddNotes() {
     background_color.value = "#223344";
     text_color.value = "#a69a9a";
     text.style.backgroundColor = "#223344";
+    notes_location_info.value = "";
+    console.log("values are reset now:",text.value);
 
 }
 //------------------------------------------------------code separation line-------------------------------------------------------------
@@ -219,8 +256,8 @@ function AI_QUERY() {
     console.log(ai_input.value);
 
     ai_input.value = "";
-
 }
+
 
 
 

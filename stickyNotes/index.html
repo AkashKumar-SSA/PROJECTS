@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sticky Notes</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">        
 </head>
 
 <body>
@@ -65,7 +65,9 @@
 
                 <textarea name="" id="text_area" cols="40" rows="10" placeholder="Enter text here//" contenteditable="true"></textarea>
 
-                <input type="text" name="" id="notes_heading" placeholder="Give heading to your notes//">
+                <input type="text" name="" id="notes_heading" placeholder="Give heading to your notes //">
+
+                <input type="text" name="" id="notes_location_info" placeholder="Add location of note creation //">
 
                 <div id="color_choose_option" class="color_pick">
                     <div id="background_choose">
@@ -111,9 +113,9 @@
     <script src="./script.js"></script>
     <script type="importmap">
         {
-          "imports": {
-            "@google/generative-ai": "https://esm.run/@google/generative-ai"
-          }
+            "imports": {
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+            }
         }
     </script>
     <script type="module" src="module.js"></script>
