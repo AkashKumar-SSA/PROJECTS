@@ -31,13 +31,24 @@ Add_notes.addEventListener("click", AddNotes);
 function AddNotes() {
 
     if (text.value === "") {
-        // alert("Please add some notes");
         return;
     }
+    if(notes_heading.value === ""){
+        alert("Please give heading to your notes !");
+        return;
+    }
+    if(notes_location_info.value === ""){
+        alert("Please give location - where you are making your notes");
+        return;
+    }
+
     empty_line.innerText = "";
 
     let div = document.createElement("div");
     div.id = "main_notes_container";
+    // Styling the main div element
+    div.style = "display:flex;flex-direction:column;min-width:400px;max-width:600px;height:350px; border-top-right-radius: 60px; border-bottom-left-radius: 60px;position:relative;";
+    div.style.backgroundColor = background_color.value;
 
     // code for Cross Button/cross_div - cross button
     let cross_div = document.createElement("div");
@@ -51,11 +62,9 @@ function AddNotes() {
     let cross_btn = document.createElement("button");
     cross_div.appendChild(cross_btn);
 
-
     // Cross button creation
     cross_btn.innerHTML = "<b>X</b>";
     cross_btn.style = "height:100%;font-size:20px;"
-
 
     //Cross button Events
     cross_btn.addEventListener('click', function () {
@@ -80,6 +89,7 @@ function AddNotes() {
     content.innerText = text.value;
     content.style.fontSize = text_size.value + "px";
     content.style.color = text_color.value;
+    
 
     // creating date-time - location div element
     let date_time_location_div = document.createElement("div");
@@ -152,7 +162,7 @@ function AddNotes() {
     div.appendChild(edit_note_popup_div);
 
     // edit_note mouseover / mouseout event listeners
-    edit_note_popup_div.innerText = "Click to edit note ."
+    edit_note_popup_div.innerText = "Click to edit ."
     edit_note.addEventListener("mouseover", () => {
         edit_note_popup_div.style = "display:block; ";
     });
@@ -172,10 +182,8 @@ function AddNotes() {
         // insert_content_toEdit(p);
     });
 
-    // Styling the main div element
-    div.style = "display:flex;flex-direction:column;width:400px;height:350px; border-top-right-radius: 60px; border-bottom-left-radius: 60px;position:relative;";
+    
 
-    div.style.backgroundColor = background_color.value;
 
     notes.appendChild(div); // adding the div to the notes div container
    

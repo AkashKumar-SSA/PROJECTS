@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sticky Notes</title>
-    <link rel="stylesheet" href="style.css">      
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id="left_right_scroll" style="width: fit-content;height: fit-content;display: flex;align-items: center;justify-content: center;position: fixed;left:10px;top:60px;z-index: 500;border-radius: 50%;">
-        <img src="left_right_logo.jpg" id="left_right_logo_image" style="width: 50px; height: 50px;border-radius: 30px;">
+    <div id="left_right_scroll">
+        <img src="left_right_logo.jpg" id="left_right_logo_image"
+            style="width: 50px; height: 50px;border-radius: 30px;">
     </div>
 
     <!-- Nav bar -->
@@ -28,7 +29,7 @@
         <a href="office.html">Office</a>
         <a href="class.html">Class</a>
         <a href="AI_Question&Answer.html">Q & A</a>
-      </div>
+    </div>
     <!-- The main container-div -->
     <div id="main_container">
         <!-- toolbar -->
@@ -40,7 +41,7 @@
             <button id="text_color">Text Color</button>
             <button id="background_colour">Background color</button>
             <button id="size">Text size</button>
-            
+
         </div>
         <!-- <div id="sticky-note">
             <p contenteditable="true"></p>
@@ -63,7 +64,8 @@
                     </div>
                 </div>
 
-                <textarea name="" id="text_area" cols="40" rows="10" placeholder="Enter text here//" contenteditable="true"></textarea>
+                <textarea name="" id="text_area" cols="40" rows="10" placeholder="Enter text here//"
+                    contenteditable="true"></textarea>
 
                 <input type="text" name="" id="notes_heading" placeholder="Give heading to your notes //">
 
@@ -76,7 +78,7 @@
                     </div>
 
                     <div id="text_color_choose">
-                        <input type="color" name="" id="color" >
+                        <input type="color" name="" id="color">
                         <label for="font_color" class="color_label">Text</label>
                     </div>
 
@@ -85,7 +87,8 @@
                         <label for="size" class="color_label">Text Size</label>
                     </div>
 
-                    <div id="refresh_content" style="border: 2px solid black;padding: 5px;height: 50px;width: 50px;display: flex;justify-content: center;align-items: center;border-radius: 50%;background-color: aquamarine;">
+                    <div id="refresh_content"
+                        style="border: 2px solid black;padding: 5px;height: 50px;width: 50px;display: flex;justify-content: center;align-items: center;border-radius: 50%;background-color: aquamarine;">
                         <p style="font-size: 40px;font-weight: 500;">R</p>
                     </div>
 
@@ -112,7 +115,7 @@
     </div>
 
     <!-- Script files -->
-    <script src = "note_add.js"></script>
+    <script src="note_add.js"></script>
     <script src="./script2.js"></script>
     <script src="./script.js"></script>
     <script type="importmap">

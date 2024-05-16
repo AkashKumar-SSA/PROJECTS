@@ -381,9 +381,8 @@ p {
     border: 2px solid green;
     display: none;
     flex-direction: column;
-    font-size: 10px;
     border-radius: 20px;
-    padding: 20px;
+    padding: 5px;
     font-size: 20px;
 }
 
@@ -392,14 +391,15 @@ p {
     min-width: fit-content;
     background-color: rgb(248, 241, 242);
     position: absolute;
-    bottom: 10%;
-    left: 70%;
-    transform: translate(-30%, -24%);
+    bottom: 16%;
+    right: 3%;
+    /* transform: translate(100%, 90%); */
     z-index: 1000;
     border: 2px solid green;
     display: none;
     flex-direction: column;
     font-size: 15px;
+    font-weight: 500;
     border-radius: 10px;
     padding: 5px;
 }
@@ -464,6 +464,29 @@ p {
     margin-left: 5px;
     text-indent: 20px;
 }
+
 /* #sticky_note_content::first-letter{
     font-size: 50px;
 } */
+#left_right_scroll{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 10px;
+    top: 60px;
+    z-index: 500;
+    border-radius: 50%;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(-180deg);
+    }
+}
