@@ -182,19 +182,19 @@ function AddNotes() {
         // insert_content_toEdit(p);
     });
 
-    
-
-
     notes.appendChild(div); // adding the div to the notes div container
    
     //reseting the values 
     reset();
 }
-
-document.querySelector("#refresh_content").addEventListener("click",reset);
+let refresh_content = document.querySelector("#refresh_content");
+refresh_content.addEventListener("click",()=>{
+    refresh_content.style = "Animation-name:rotate_refresh_content;animation-duration:5s;"
+    reset();
+});
 function reset(){
     notes_heading.value = "";
-    text.value = "";
+    text.value = ""
     text_size.value = "30";
     text.style.fontSize = text_size.value + "px";
     background_color.value = "#223344";
@@ -217,7 +217,6 @@ let ai_input_container_div = document.querySelector("#ai_input_container_div");
 
 ai_input.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
-    //   document.getElementById('yourButtonId').click();
     ai_answer_generate_button.click();
     }
   });

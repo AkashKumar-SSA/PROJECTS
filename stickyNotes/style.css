@@ -477,7 +477,7 @@ p {
     position: fixed;
     left: 10px;
     top: 60px;
-    z-index: 500;
+    z-index: 10;
     border-radius: 50%;
 }
 
@@ -489,4 +489,15 @@ p {
     to {
         transform: rotate(-180deg);
     }
+}
+
+@keyframes rotate_refresh_content {
+    from {rotate_refresh_content
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(720deg);
+    }
+    
 }
