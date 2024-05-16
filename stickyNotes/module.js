@@ -21,9 +21,8 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
             for await (const chunk of result.stream) {
                 let chunkTest = chunk.text();
                 original_text += chunkTest;
-                const resposeArray = chunkTest.split("**");
-                let newArray;
-                console.log("the splitted text - ",resposeArray);
+                const resposeArray = chunkTest.split("**");                let newArray;
+                // console.log("the splitted text - ",resposeArray);
                 for(let i=0; i < resposeArray.length ; i++){
                     if(i === 0 || i%2 !== 1){
                         newArray += resposeArray[i];
@@ -33,7 +32,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
                         newArray += "&nbsp;&nbsp;";
                     }
                 }
-                let newArray2 = newArray.split("*").join("<br>&nbsp;&nbsp;->")
+                let newArray2 = newArray.split("*").join("<br>&nbsp;&nbsp;");
                 // text += chunkTest;
                 text += newArray2;
 

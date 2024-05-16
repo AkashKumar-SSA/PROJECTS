@@ -18,20 +18,21 @@ text_color.value = "#a69a9a";
 text_size.value = "10";
 
 //global variables
-let notes_text_content;
-let notes_heading_content;
-let notes_location_content;
+// let notes_text_content;
+// let notes_heading_content;
+// let notes_location_content;
 
-function inser_content_toEdit(){
+// function inser_content_toEdit(){
     // text.innerText = notes.notes_text_content;
     // notes_heading.innerHTML = notes_heading_content;
     // notes_location_info.innerHTML = notes_location_content;
 
-    text.innerText = "hello";
-    notes_heading.innerText = "hellow";
-    notes_location_info.innerText = "hellow";
-    console.log("inside insert function");
-}
+//     text.innerText = "hello";
+//     notes_heading.innerText = "hellow";
+//     notes_location_info.innerText = "hellow";
+//     console.log("inside insert function");
+// }
+
 
 // Setting the property to the text/notes field
 background_color.addEventListener('change', function () {
@@ -145,19 +146,23 @@ function AddNotes() {
     let location_popup_div = document.createElement("div");
     location_popup_div.className = "location_popup_div";
     location_popup_div.id = "location_popup_div";
-
     div.appendChild(location_popup_div);
 
     // Mouseover / Mouseout event Location logo
     let location_logo = document.createElement("img");
     location_logo.src = "location_logo.jpg";
-    location_logo.style = "height:25px;";
+    location_logo.style = "height:25px;display:flex;flex-direction:column;";
     date_time_location_div.appendChild(location_logo);
+    let popup_heading = document.createElement("P");
+    location_popup_div.appendChild(popup_heading);
+    popup_heading.innerHTML = "<b>At :</b>";
+
+    let popup_location = document.createElement("p");
+    location_popup_div.appendChild(popup_location);
+    popup_location.innerText = notes_location_info.value;
 
     location_logo.addEventListener("mouseover", function () {
         location_popup_div.style = "display:block; ";
-        location_popup_div.innerHTML = "<b>Location :</b><br>";
-        location_popup_div.innerText += notes_location_info.value;
 
     });
     location_logo.addEventListener("mouseout", function () {
@@ -170,18 +175,23 @@ function AddNotes() {
     edit_note.style = "height:25px;";
     date_time_location_div.appendChild(edit_note);
 
+
+    // edit note popup div
+    let edit_note_popup_div = document.createElement("div");
+    edit_note_popup_div.className = "edit_note_popup_div";
+    edit_note_popup_div.id = "edit_note_popup_div";
+    div.appendChild(edit_note_popup_div);
+
+    edit_note.addEventListener("mouseover",()=>{
+
+    })
+
     //edit_note mouse click events
     edit_note.addEventListener("click",()=>{
         text.innerHTML  += p.innerText;
         notes_heading.innerText = heading.value;
-        console.log("inside the edit text element:-----------");
-        console.log(p);
-        console.log(p.innerText);
-        console.log(text);
-        console.log("from textarea: ",text.innerHTML);
         inser_content_toEdit();
-        
-    })
+    });
 
     // Styling the main div element
     div.style = "display:flex;flex-direction:column;width:400px;height:350px; border-top-right-radius: 60px; border-bottom-left-radius: 60px;position:relative;";
@@ -202,7 +212,6 @@ function AddNotes() {
     text.style.backgroundColor = "#223344";
     notes_location_info.value = "";
     console.log("values are reset now:",text.value);
-
 }
 //------------------------------------------------------code separation line-------------------------------------------------------------
 // Code for integrating interactive Gemini AI_chatbot
