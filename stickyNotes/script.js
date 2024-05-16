@@ -229,6 +229,7 @@ ai_button.addEventListener('click', function () {
         ai_button.style.backgroundColor = "#4F99DB";
         text.style.display = "none";
         notes_heading.style.display = "none";
+        notes_location_info.style.display = "none";
         ai_show_condition = true;
         ai_container.style = "display:flex";
         ai_input_container_div.style = "display:flex";
@@ -240,6 +241,7 @@ ai_button.addEventListener('click', function () {
         ai_show_condition = false;
         text.style.display = "block";
         notes_heading.style.display = "block";
+        notes_location_info.style.display = "block";
     }
 });
 
