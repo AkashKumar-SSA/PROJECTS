@@ -16,7 +16,6 @@
     align-items: center;
     width: 100%;
     border: 2px solid red;
-
 }
 
 #folder_options_container div {
@@ -24,8 +23,6 @@
     color: rgb(11, 9, 13);
     font-weight: 700;
     font-size: 20px;
-
-
 }
 
 /* side-boar / toolbar design */
@@ -40,7 +37,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:50px;
+    gap: 50px;
     display: none;
 }
 
@@ -76,6 +73,7 @@
     flex-direction: column;
     align-items: center;
 }
+
 /* #left_container{
     display: none;
 } */
@@ -110,14 +108,15 @@
     font-weight: 500;
 }
 
-#notes_heading ,#notes_location_info {
+#notes_heading,
+#notes_location_info {
     width: 70%;
     height: 60px;
     margin-top: 20px;
     border-radius: 10px;
     padding-left: 10px;
-    position:relative;
-    top:50px;
+    position: relative;
+    top: 50px;
     font-size: 20px;
     font-weight: 400;
 }
@@ -144,7 +143,7 @@
     bottom: 80px;
     left: 40%;
     display: flex;
-    
+
 }
 
 #add_note {
@@ -371,8 +370,8 @@ p {
 
 /* Location popup  */
 #location_popup_div {
-    /* height: 200px; */
-    width: 250px;
+    max-width: 500px;
+    min-width: 200px;
     background-color: rgb(248, 241, 242);
     position: absolute;
     bottom: 10%;
@@ -386,6 +385,23 @@ p {
     border-radius: 20px;
     padding: 20px;
     font-size: 20px;
+}
+
+#edit_note_popup_div {
+    max-width: 500px;
+    min-width: fit-content;
+    background-color: rgb(248, 241, 242);
+    position: absolute;
+    bottom: 10%;
+    left: 70%;
+    transform: translate(-30%, -24%);
+    z-index: 1000;
+    border: 2px solid green;
+    display: none;
+    flex-direction: column;
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 #create_notes_heading {
@@ -416,7 +432,7 @@ p {
     position: fixed;
     width: 100%;
     z-index: 100;
-    top:0;
+    top: 0;
 }
 
 .navbar a {
@@ -430,11 +446,24 @@ p {
     font-size: 20px;
     font-weight: 500;
 }
+
 .navbar a:hover {
     background: #ddd;
     color: black;
 }
-.navbar #create_note{
+
+.navbar #create_note {
     background: #ddd;
     color: black;
 }
+
+#sticky_note_content {
+    height: 281px;
+    width: 100%;
+    overflow-y: auto;
+    margin-left: 5px;
+    text-indent: 20px;
+}
+/* #sticky_note_content::first-letter{
+    font-size: 50px;
+} */

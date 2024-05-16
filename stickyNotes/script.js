@@ -11,28 +11,7 @@ let ai_input = document.querySelector("#ai_input");
 
 let notes_location_info = document.querySelector("#notes_location_info");
 
-// let memory_main = document.querySelector(".memory_main");
-// Setting th default /initial property to textarea
-background_color.value = "#223344";
-text_color.value = "#a69a9a";
-text_size.value = "10";
-
-//global variables
-// let notes_text_content;
-// let notes_heading_content;
-// let notes_location_content;
-
-// function inser_content_toEdit(){
-    // text.innerText = notes.notes_text_content;
-    // notes_heading.innerHTML = notes_heading_content;
-    // notes_location_info.innerHTML = notes_location_content;
-
-//     text.innerText = "hello";
-//     notes_heading.innerText = "hellow";
-//     notes_location_info.innerText = "hellow";
-//     console.log("inside insert function");
-// }
-
+reset();
 
 // Setting the property to the text/notes field
 background_color.addEventListener('change', function () {
@@ -45,20 +24,10 @@ text_size.addEventListener('change', function () {
     text.style.fontSize = text_size.value + "px";
 });
 
-ai_input.addEventListener("keydown", function (event) {
-    console.log("the pressed key is :", event)
-    if (event.key === "Enter") {
-        add_note.click();
-    }
-});
+
 // Codes for  Adding note 
 Add_notes.addEventListener("click", AddNotes);
 
-// document.addEventListener('keydown', function(event) {
-//     if (event.key === 'Enter') {
-//       document.getElementById('yourButtonId').click();
-//     }
-//   });
 function AddNotes() {
 
     if (text.value === "") {
@@ -104,13 +73,13 @@ function AddNotes() {
     // code for inserting text/text_div
     let text_div = document.createElement("div");
     div.appendChild(text_div);
-    let p = document.createElement("p");
-    text_div.appendChild(p);
+    let content = document.createElement("p");
+    text_div.appendChild(content);
     text_div.style = "margin:0";
-    p.style = "height: 281px;width: 100%;overflow-y: auto;margin-left:5px;";
-    p.innerText = text.value;
-    p.style.fontSize = text_size.value + "px";
-    p.style.color = text_color.value;
+    content.id = "sticky_note_content";
+    content.innerText = text.value;
+    content.style.fontSize = text_size.value + "px";
+    content.style.color = text_color.value;
 
     // creating date-time - location div element
     let date_time_location_div = document.createElement("div");
@@ -182,15 +151,25 @@ function AddNotes() {
     edit_note_popup_div.id = "edit_note_popup_div";
     div.appendChild(edit_note_popup_div);
 
-    edit_note.addEventListener("mouseover",()=>{
+    // edit_note mouseover / mouseout event listeners
+    edit_note_popup_div.innerText = "Click to edit note ."
+    edit_note.addEventListener("mouseover", () => {
+        edit_note_popup_div.style = "display:block; ";
+    });
+    edit_note.addEventListener("mouseout", () => {
+        edit_note_popup_div.style = "display:none;";
+    });
 
-    })
+    //edit_note mouse click events Listener
+    edit_note.addEventListener("click", () => {
+        // text.innerHTML  += p.innerText;
+        // notes_heading.innerText = heading.value;
 
-    //edit_note mouse click events
-    edit_note.addEventListener("click",()=>{
-        text.innerHTML  += p.innerText;
-        notes_heading.innerText = heading.value;
-        inser_content_toEdit();
+        text.value = content.innerText;
+        notes_heading.value = heading.innerText;
+        notes_location_info.value = popup_location.innerText;
+        console.log("text content =", content.innerText);
+        // insert_content_toEdit(p);
     });
 
     // Styling the main div element
@@ -199,21 +178,23 @@ function AddNotes() {
     div.style.backgroundColor = background_color.value;
 
     notes.appendChild(div); // adding the div to the notes div container
-    // memory_main.appendChild(div);
+   
+    //reseting the values 
+    reset();
+}
 
-    console.log("values are before - reset now:",text.value);
-    //reseting the values
+document.querySelector("#refresh_content").addEventListener("click",reset);
+function reset(){
     notes_heading.value = "";
     text.value = "";
-    text_size.value = "10";
+    text_size.value = "30";
     text.style.fontSize = text_size.value + "px";
     background_color.value = "#223344";
     text_color.value = "#a69a9a";
     text.style.backgroundColor = "#223344";
     notes_location_info.value = "";
-    console.log("values are reset now:",text.value);
 }
-//------------------------------------------------------code separation line-------------------------------------------------------------
+//------------------------------------------------code separation line-------------------------------------------------------------
 // Code for integrating interactive Gemini AI_chatbot
 
 let ai_button = document.querySelector("#ai"); //AI button
@@ -226,7 +207,14 @@ let ai_container = document.querySelector("#ai_container");
 let ai_output_container_div = document.querySelector("#ai_output_container_div");
 let ai_input_container_div = document.querySelector("#ai_input_container_div");
 
+ai_input.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+    //   document.getElementById('yourButtonId').click();
+    ai_answer_generate_button.click();
+    }
+  });
 
+  
 function userquestion() {
     return ai_input.value;
 }
