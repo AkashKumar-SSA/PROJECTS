@@ -39,7 +39,7 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
-    display: none;
+    /* display: none; */
 }
 
 #toolbar button {
@@ -120,6 +120,7 @@ webpages/html files */
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    
 }
 
 /* #left_container{
