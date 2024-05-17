@@ -20,6 +20,7 @@
         </div>
     </main>
 
+    <script src="script.js"></script>
     <script type="importmap">
         {
           "imports": {
@@ -34,7 +35,8 @@
         document.querySelector(".btn").addEventListener('click', run);
 
         // Access your API key (see "Set up your API key" above)
-        const API_KEY = 'AIzaSyB0J5ZQAVdt7iaOzjaWbHBEZn9CbqK5ev4';
+       
+        const API_KEY = API_key;
         const genAI = new GoogleGenerativeAI(API_KEY);
 
         async function run() {

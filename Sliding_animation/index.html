@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #333;
+            transition: transform 0.3s ease-out;
+            transform: translateX(-100%);
+            z-index: 1000;
+        }
+
+        #menu-container.open {
+            transform: translateX(0);
+        }
+
+        #menu-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1001;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu-container">
+        <ul>
+            <li><a href="#">Create Note</a></li>
+            <li><a href="#">Memories</a></li>
+            <li><a href="#">Today</a></li>
+            <li><a href="#">Office</a></li>
+            <li><a href="#">Class</a></li>
+        </ul>
+    </div>
+    <button id="menu-button">Menu</button>
+
+    <script>
+        const menuButton = document.getElementById("menu-button");
+        const menuContainer = document.getElementById("menu-container");
+
+        menuButton.addEventListener("click", () => {
+            left_container.classList.toggle("open");
+        });
+    </script>
+</body>
+
+</html>
