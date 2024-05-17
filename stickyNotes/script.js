@@ -11,7 +11,7 @@ let ai_input = document.querySelector("#ai_input");
 
 let notes_location_info = document.querySelector("#notes_location_info");
 
-reset();
+reset(); // Calling the reset function to reset all the containers
 
 // Setting the property to the text/notes field
 background_color.addEventListener('change', function () {
@@ -23,7 +23,6 @@ text_color.addEventListener('change', function () {
 text_size.addEventListener('change', function () {
     text.style.fontSize = text_size.value + "px";
 });
-
 
 // Codes for  Adding note 
 Add_notes.addEventListener("click", AddNotes);
@@ -200,7 +199,11 @@ function reset(){
     background_color.value = "#223344";
     text_color.value = "#a69a9a";
     text.style.backgroundColor = "#223344";
+    text.style.height = "300px";
+    text.style.width = "70%";
+
     notes_location_info.value = "";
+    
 }
 //------------------------------------------------code separation line-------------------------------------------------------------
 // Code for integrating interactive Gemini AI_chatbot
