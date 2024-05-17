@@ -4,7 +4,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
         document.querySelector("#ai_answer_generate_button").addEventListener('click', run);
 
         // Access your API key (see "Set up your API key" above)
-        const API_KEY = 'AIzaSyB0J5ZQAVdt7iaOzjaWbHBEZn9CbqK5ev4';
+        const API_KEY = API_key;
         const genAI = new GoogleGenerativeAI(API_KEY);
         // For text-only input, use the gemini-pro model
         const model = genAI.getGenerativeModel({ model: "gemini-pro" });
