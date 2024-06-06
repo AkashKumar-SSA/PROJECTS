@@ -12,8 +12,9 @@
     <div id="result"></div>
     <button id="get_location">Get Location</button>
 
-    <script scr ="no_access.js"></script>
+    <script scr ="api_key.js"></script>
     <script>
+        const API_key =  `a2b921aa65a6cfe5e3e18b48fec809f1`;
         
         const API_KEY = API_key;
         const result = document.querySelector("#result");
@@ -25,10 +26,11 @@
         function findMyCoordinates() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition((position) => {
+                    console.log("my geo coordinate is :",position);
                     const latitude = position.coords.latitude;
                     const longitude = position.coords.longitude;
-                    // result.innerHTML = "Latitude: " + latitude + "<br>" + "Longitude: " + longitude;
-                    // console.log(result.innerHTML);
+                    result.innerHTML = "Latitude: " + latitude + "<br>" + "Longitude: " + longitude;
+                    console.log(result.innerHTML);
                     getWeather(latitude, longitude);
                     
                 }, (error) => {

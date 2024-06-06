@@ -8,6 +8,7 @@
     margin: 0;
     height: 100vh;
     display: flex;
+    background-color: rgba(132, 211, 118, 1);
 }
 
 #folder_options_container {
@@ -28,28 +29,69 @@
 
 /* side-boar / toolbar design */
 #toolbar {
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 15vh;
     left: 0;
-    width: 150px;
-    height: 100%;
-    background-color: #f1f1f1;
+    width: 70px;
+    height: 70%;
+    background-color: #fbfbfb;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 50px;
-    /* display: none; */
+    gap: 3px;
+    margin-left: 10px;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    z-index: 10;
+    ;
+
 }
 
-#toolbar button {
-    width: 30px;
-    height: 30px;
-    border: none;
+#toolbar button,
+#toolbar div {
+    width: 70px;
+    height: 70px;
+    border: 3px solid rgb(184, 178, 178);
+    border-radius: 20%;
     background-color: transparent;
     cursor: pointer;
     font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 35px;
+    background-color: aliceblue;
+}
+
+#toolbar #shapes_container {
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: 155px;
+    height: fit-content;
+    border-radius: 10px;
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+#toolbar #shapes_container {
+    display: none;
+}
+
+#textSize_input_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#textSize_input_container #text_size {
+    position: absolute;
+    left: 100px;
+    bottom: 27px;
+    display: none;
+
 }
 
 /* Navingation bar designing */
@@ -100,17 +142,6 @@ webpages/html files */
     border-radius: 50%;
 }
 
-/* #sticky-note {
-    position: absolute;
-    top: 50px;
-    left: 60px;
-    width: 200px;
-    height: 200px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-} */
-
 /* left side container design */
 #left_container {
     display: flex;
@@ -120,12 +151,8 @@ webpages/html files */
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    
-}
 
-/* #left_container{
-    display: none;
-} */
+}
 
 #left_container .left_main_elements_container {
     display: flex;
@@ -147,7 +174,6 @@ webpages/html files */
     background-color: rgb(34, 51, 68);
     color: rgb(166, 154, 154);
     font-weight: 500;
-    z-index: 100;
 }
 
 /* Notes heading and location input container */
@@ -158,7 +184,6 @@ webpages/html files */
     margin-top: 20px;
     border-radius: 10px;
     padding-left: 10px;
-    position: relative;
     top: 50px;
     font-size: 20px;
     font-weight: 400;
@@ -176,28 +201,12 @@ webpages/html files */
     font-style: italic;
 }
 
-
-#color_choose_option {
-    display: flex;
-    justify-content: space-between;
-    width: 30em;
-    position: absolute;
-    bottom: 65px;
-    ;
-}
-
-#background_choose,
-#text_color_choose,
-#text_size {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 /* Background and text colour choose option */
 #color {
-    height: 30px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
+    border-radius: 20%;
+    align-items: center;
 }
 
 /* AI button to open Gimini chat bot */
@@ -245,7 +254,6 @@ webpages/html files */
 
 #right_container {
     width: 55vw;
-    background-color: rgba(132, 211, 118, 1);
     overflow-y: auto;
     margin-top: 58px;
 }
@@ -504,7 +512,7 @@ p {
     }
 }
 
-@keyframes rotate_refresh_content {
+/* @keyframes rotate_refresh_content {
     from {
         transform: rotate(0deg);
     }
@@ -513,4 +521,4 @@ p {
         transform: rotate(720deg);
     }
 
-}
+} */

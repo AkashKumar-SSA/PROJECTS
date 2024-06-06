@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Default styles for all devices */
+body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 20px;
+}
+
+#main_container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    background-color: rgb(240, 240, 239);
+    gap: 10px;
+    font-weight: 600;
+    height: fit-content;
+
+}
+
+.texta-align-center {
+    text-align: center;
+}
+
+
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(158, 209, 143);
+    padding: 10px;
+    height: fit-content;
+}
+
+#left_header {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+#left_header #name {
+    font-size: 30px;
+    font-weight: 500;
+    text-decoration: underline;
+    background-color: rgb(222, 222, 194);
+    text-align: center;
+    margin: 0;
+}
+
+#left_header #description {
+    text-indent: 20px;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#left_header #languages {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+#right_header {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2%;
+    margin-left: 5%;
+    gap: 2px;
+    height: fit-content;
+    width: 380px;
+}
+
+#right_header div {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    background-color: rgb(231, 231, 167);
+}
+
+#right_header div span {
+    display: flex;
+    text-wrap: wrap;
+}
+
+#right_header div a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+#right_header div img {
+    width: 35px;
+    height: 30px;
+}
+
+.content_header {
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: underline;
+    margin: 0px;
+    font-style: italic;
+    padding: 10px;
+}
+
+table {
+    border: 2px solid black;
+    width: 100%;
+    background-color: white;
+
+
+}
+
+thead th {
+    text-align: center;
+    background-color: rgb(133, 132, 134);
+}
+
+tbody td {
+    text-align: left;
+    background-color: rgb(205, 205, 202);
+}
+
+#programming_languages div,
+#professional_skill div {
+    background-color: rgb(205, 205, 202);
+}
+
+/* ADDING DEVICE COMPATIBILITY */
+/* @media screen and (max-width:400px) {
+    #main_container {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        background-color: rgb(240, 240, 239);
+        gap: 20px;
+        padding: 10px;
+        font-weight: 600;
+    }
+    #right_header {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgb(104, 99, 99);
+        margin-right: 5%;
+        margin-left: 5%;
+        padding: 2px;
+        gap: 2px;
+        height: fit-content;
+        width: 50%;
+    }    
+} */
+@media screen and (max-width:400px) {
+    body {
+        background-color: lightgreen;
+        display: flex;
+        margin: 20px;
+    }
+    #left_header {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    #header {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: rgb(158, 209, 143);
+        padding: 10px;
+        height: fit-content;
+    }
+    #right_header {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        gap: 5px;
+        height: fit-content;
+        width: 100%;
+        margin: 10px;
+    }
+    #right_header div {
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        gap: 20px;
+        align-items: center;
+    }
+
+    /* #main_container {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        background-color: rgb(240, 240, 239);
+        gap: 20px;
+        padding: 10px;
+        font-weight: 600;
+    }
+
+    #right_header {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgb(104, 99, 99);
+        padding: 2px;
+        gap: 2px;
+        height: fit-content;
+        width: 100%;
+    } */
+}
+
+
+
+/* Styles for smaller screens (mobile phones) */
+@media screen and (min-width:400px) and (max-width: 600px) {
+    body {
+        background-color: lightgreen;
+        display: flex;
+        margin: 20px;
+    }
+    #left_header {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    #header {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: rgb(158, 209, 143);
+        padding: 10px;
+        height: fit-content;
+    }
+    #right_header {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        gap: 5px;
+        height: fit-content;
+        width: 100%;
+        margin: 10px;
+    }
+    #right_header div {
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        gap: 20px;
+        align-items: center;
+    }
+
+}
+    /* body {
+        display: flex;
+        margin: 20px;
+    }
+
+    #header {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: rgb(158, 209, 143);
+        padding: 10px;
+        height: fit-content;
+    }
+    #right_header {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap: 5px;
+        height: fit-content;
+        width: 100%;
+        margin: 10px;
+    }
+    #right_header div {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 20px;
+        align-items: center;
+    }
+} */
+
+/* Styles for medium screens (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        background-color: lightgreen;
+        display: flex;
+        margin: 20px;
+    }
+    #left_header {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    #header {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: rgb(158, 209, 143);
+        padding: 10px;
+        height: fit-content;
+    }
+    #right_header {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        gap: 5px;
+        height: fit-content;
+        width: 100%;
+        margin: 10px;
+    }
+    #right_header div {
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        gap: 20px;
+        align-items: center;
+    }
+
+}
+
+/* Styles for larger screens (desktops) */
+@media (min-width: 1025px) {
+    body {
+        background-color: lightyellow;
+    }
+}
+
+@media print {}
